@@ -3,19 +3,18 @@
 
 
 def hello_name(user_name):
-    print(user_name)
+    print("Hello_" + user_name.upper() + "!")
 
 
-hello_name("hello_USERNAME!")
+hello_name("Patrick")
 
 '''question 2'''
 # Write a python function, first_odds that prints the odd numbers from 1-100 and returns nothing
 
 
 def first_odds():
-    range(1, 100, 2)
-    for odd in range():
-        print()
+    for odd in range(1, 100, 2):
+        print(odd)
 
 
 '''question 3'''
@@ -23,14 +22,12 @@ def first_odds():
 
 
 def max_num_in_list(a_list):
-    numbers = [55, 4, 92, 1, 104, 64, 73, 99, 20]
-    max_value = None
-    for num in numbers:
-        if (max_value is None or num > max_value):
-            max_value = num
+    max_num = max(a_list)
+    return max_num
 
 
-print(max_num_in_list(1))
+numbers = ([1, 2, 3, 4, 5])
+print(max_num_in_list([1, 2, 3, 4, 5]))
 
 
 '''question 4'''
@@ -38,17 +35,25 @@ print(max_num_in_list(1))
 
 
 def is_leap_year(a_year):
-    '''question 5'''
+    if a_year % 4 == 0 and (a_year % 400 == 0 or a_year % 100 != 0):
+        print(True)
+    else:
+        print(False)
+
+
+is_leap_year(2021)
+
+'''question 5'''
 # Write a function to check to see if all numbers in list are consecutive numbers. For example, [2, 3, 4, 5, 6, 7] are consecutive numbers, but[1, 2, 4, 5] are not consecutive numbers. The return should be boolean Type.
 
 
 def is_consecutive(a_list):
-    a_list = [1, 2, 3, 4, 5, 6]
-    for the_list in a_list:
-        if a_list == [1, 2, 3, 4, 5, 6]:
-            print(True)
+    i = 0
+    status = True
+    while i < len(a_list) - 1:
+        if a_list[i] + 1 == a_list[i + 1]:
+            i += 1
         else:
-            print(False)
-
-
-# print(is_consecutive())
+            status = False
+            break
+    print(status)
